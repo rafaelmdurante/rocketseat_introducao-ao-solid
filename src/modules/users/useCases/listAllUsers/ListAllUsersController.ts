@@ -13,7 +13,7 @@ class ListAllUsersController {
     try {
       users = this.listAllUsersUseCase.execute({ user_id });
     } catch (err) {
-      return response.status(400).send({ error: err });
+      return response.status(400).send({ error: err.message });
     }
 
     return response.send(users);
