@@ -13,7 +13,7 @@ class CreateUserController {
     try {
       user = this.createUserUseCase.execute({ name, email });
     } catch (err) {
-      return response.status(400).send({ error: err });
+      return response.status(400).send({ error: err.message });
     }
 
     return response.status(201).send(user);
